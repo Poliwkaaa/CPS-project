@@ -96,19 +96,6 @@ body {
   padding: 0 16px;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .header {
   background-color: #fff;
   padding: 18px 0;
@@ -122,6 +109,7 @@ body {
 
 .menu__left-column {
   display: flex;
+  justify-content: space-between;
 }
 
 .menu__button {
@@ -133,41 +121,15 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 8px;
-  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.menu__button:last-child {
+  margin-right: 0;
 }
 
 .burger {
-  margin: 8px 17px 0 0;
-}
-
-.menu__burger-btn {
-  position: relative;
-  width: 10px;
-}
-
-.menu__burger-btn,
-.menu__burger-btn::before,
-.menu__burger-btn::after {
-  height: 2px;
-  background-color: #fff;
-  display: block;
-  border-radius: 2px;
-}
-
-.menu__burger-btn::before,
-.menu__burger-btn::after {
-  content: "";
-  position: absolute;
-}
-
-.menu__burger-btn::before {
-  top: 7px;
-  width: 14px;
-}
-
-.menu__burger-btn::after {
-  bottom: 7px;
-  width: 18px;
+  background-image: url(../images/burger.svg);
 }
 
 .menu__contacts {
@@ -324,28 +286,6 @@ body {
   margin: 0 auto;
 }
 
-@media (min-width: 560px) {
-  .menu__contacts {
-    display: block;
-  }
-
-  .menu__right-column {
-    display: flex;
-  }
-
-  .request {
-    margin-left: 42px;
-  }
-
-  .services__bottom {
-    display: flex;
-  }
-
-  .services__img {
-    max-height: 176px;
-  }
-}
-
 @media (min-width: 768px) {
   .container {
     max-width: 1100px;
@@ -353,8 +293,11 @@ body {
     position: relative;
   }
 
+  .menu__left-column {
+    width: 180px;
+  }
+
   .burger {
-    margin-right: 42px;
     position: relative;
   }
 
@@ -367,12 +310,22 @@ body {
     left: 60px;
     top: 5px;
   }
+  
+  .menu__right-column {
+    display: flex;
+  }
+
+  .menu__contacts {
+    display: block;
+    margin-right: 42px;
+  }
 
   .services__inner {
     margin-bottom: 32px;
   }
 
   .services__bottom {
+    display: flex;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -398,7 +351,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1120px) {
   .header {
     display: none;
   }
@@ -422,6 +375,10 @@ body {
     position: relative;
   }
 
+  .menu__button:last-child {
+    margin-left: 160px;
+  }
+
   .menu__button::before {
     position: absolute;
     width: 125px;
@@ -443,8 +400,12 @@ body {
     top: 10px;
   }
 
-  .status {
-    margin-left: 160px;
+  .status::before {
+    content: "Статус ремонта";
+  }
+
+  .services__inner {
+    margin-bottom: 16px;
   }
 
   .services__list {
@@ -453,14 +414,6 @@ body {
 
   .services__link {
     padding: 8px 14px;
-  }
-
-  .status::before {
-    content: "Статус ремонта";
-  }
-
-  .services__inner {
-    margin-bottom: 16px;
   }
 
   .services__bottom {
